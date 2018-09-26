@@ -1,5 +1,6 @@
 package com.mvopo.flashcard.Interface;
 
+import android.os.Bundle;
 import android.speech.RecognitionListener;
 import android.view.View;
 import android.widget.CompoundButton;
@@ -18,16 +19,15 @@ public class MainActivityContract {
 
         void initAdapter(int layoutId);
 
-        void startSpeechRecognizer();
-        void restartSpeechRecognizer();
+        void launchGameActivity();
 
         void moveFirstCardToLast();
+
+        void openLinkIntent(String url);
+
         void setCharacters(ArrayList<String> characters);
 
         void setButtonVisibility(int visibility);
-        void setSettingVisibility(int visibility);
-        void setSpeechTextVisibility(int visibility);
-        void setSpeechText(String text);
 
         boolean shouldShuffle();
 
@@ -35,12 +35,13 @@ public class MainActivityContract {
         void stopAutoFlash();
 
         void swipeTopCard();
+
+        void showCreditsDialog();
     }
 
     public interface mainAction{
 
         ArrayList<String> getCharacters(String regex, int baseResourceID);
-        ArrayList<String> getRandomCharacters(int size);
         String getPhonetics();
 
         SwipeFlingAdapterView.onFlingListener getFlingListener();
@@ -50,7 +51,7 @@ public class MainActivityContract {
         CompoundButton.OnCheckedChangeListener getCheckChangeListener();
         SeekBar.OnSeekBarChangeListener getSeekBarChangeListener();
         View.OnClickListener getClickListener();
-        RecognitionListener getSpeechListener();
+        View.OnClickListener getCreditLinkListener();
 
         void performNext();
         void performFlingTransition();

@@ -7,22 +7,27 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 
 import com.mvopo.flashcard.R;
-import com.mvopo.flashcard.View.Fragments.GameSettingFragment;
+import com.mvopo.flashcard.View.Fragments.PracticeFragment;
+
+import java.util.ArrayList;
 
 public class GameActivity extends AppCompatActivity{
 
     FragmentManager fm;
     FragmentTransaction ft;
 
-    GameSettingFragment gst = new GameSettingFragment();
+//    GameSettingFragment gst = new GameSettingFragment();
+    PracticeFragment pf = new PracticeFragment();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_container);
+        setContentView(R.layout.activity_game);
+
+        pf.setArguments(getIntent().getExtras());
 
         fm = getSupportFragmentManager();
         ft = fm.beginTransaction();
-        ft.replace(R.id.fragment_container, gst).commit();
+        ft.replace(R.id.fragment_container, pf).commit();
     }
 }

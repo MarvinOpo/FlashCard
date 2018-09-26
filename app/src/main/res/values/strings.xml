@@ -148,4 +148,11 @@
         Weakness Weighted Whatever Whenever Wherever Wildlife Wireless Withdraw
         Woodland Workshop Yourself
     </string>
+
+    <string name="swipecard"><u>Diolor/Swipecards</u></string>
+    <string name="swipecard_info">A Tinder-like swipeable cards</string>
+
+    <string name="icons8"><u>ICONS8</u></string>
+    <string name="icons8_info">An application that generates icons in any color, size and format</string>
+
 </resources>

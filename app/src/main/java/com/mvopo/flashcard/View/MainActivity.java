@@ -1,12 +1,14 @@
 package com.mvopo.flashcard.View;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.speech.RecognizerIntent;
-import android.speech.SpeechRecognizer;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -41,12 +43,6 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
 
     CompoundButton.OnCheckedChangeListener onCheckedChangeListener;
 
-    int currentLayout = -1;
-
-    SpeechRecognizer speechRecognizer;
-    Intent speechRecognizerIntent;
-    boolean isListening = false;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,7 +58,6 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
         tvSpeechText = findViewById(R.id.detexted_text);
         btnStart = findViewById(R.id.start_btn);
 
-        flingContainer.setMaxVisible(1);
         characters.addAll(mPresenter.getCharacters(Constants.regexPerChar, R.string.letters_num));
         initAdapter(R.layout.letter_num_layout);
     }
@@ -83,6 +78,20 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
     }
 
     @Override
+    public void onBackPressed() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Are you sure you want to exit app?");
+        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                MainActivity.super.onBackPressed();
+            }
+        });
+        builder.setNegativeButton("Cancel", null);
+        builder.show();
+    }
+
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main, menu);
         return super.onCreateOptionsMenu(menu);
@@ -93,13 +102,6 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
         mPresenter.onOptionItemSelected(item.getItemId());
         return super.onOptionsItemSelected(item);
     }
-
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//
-//        restartSpeechRecognizer();
-//    }
 
     @Override
     public String getBaseResource(int stringResourceID) {
@@ -118,59 +120,30 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
     }
 
     @Override
-    public void setSettingVisibility(int visibility) {
-        settingContainer.setVisibility(visibility);
-    }
-
-    @Override
-    public void setSpeechTextVisibility(int visibility) {
-        tvSpeechText.setVisibility(visibility);
-    }
-
-    @Override
-    public void setSpeechText(String text) {
-        tvSpeechText.setText(text);
-    }
-
-    @Override
     public void initAdapter(int layoutId) {
-        currentLayout = layoutId;
-
         adapter = new ArrayAdapter<>(this, layoutId, R.id.char_txtview, characters);
         flingContainer.setAdapter(adapter);
     }
 
     @Override
-    public void startSpeechRecognizer() {
-        speechRecognizer = SpeechRecognizer.createSpeechRecognizer(this);
-        speechRecognizerIntent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-        speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
-                RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-        speechRecognizerIntent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE,
-                this.getPackageName());
-
-        speechRecognizer.setRecognitionListener(mPresenter.getSpeechListener());
-
-        if (!isListening) {
-            speechRecognizer.startListening(speechRecognizerIntent);
-            isListening = true;
-        }
+    public void launchGameActivity() {
+        Intent intent = new Intent(this, GameActivity.class);
+        intent.putStringArrayListExtra("characters", characters);
+        startActivity(intent);
     }
 
-    @Override
-    public void restartSpeechRecognizer() {
-        if(isListening) {
-            isListening = false;
-            speechRecognizer.destroy();
-        }
-
-        startSpeechRecognizer();
-    }
 
     @Override
     public void moveFirstCardToLast() {
         characters.add(characters.remove(0));
         adapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void openLinkIntent(String url) {
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse(url));
+        startActivity(intent);
     }
 
     @Override
@@ -203,6 +176,21 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
     @Override
     public void swipeTopCard() {
         flingContainer.getTopCardListener().selectRight();
+    }
+
+    @Override
+    public void showCreditsDialog() {
+        View view = getLayoutInflater().inflate(R.layout.credits_dialog, null);
+
+        TextView swipeCardLink = view.findViewById(R.id.swipe_card_link);
+        TextView icons8Link = view.findViewById(R.id.icon8_link);
+
+        swipeCardLink.setOnClickListener(mPresenter.getCreditLinkListener());
+        icons8Link.setOnClickListener(mPresenter.getCreditLinkListener());
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setView(view);
+        builder.show();
     }
 
     @Override

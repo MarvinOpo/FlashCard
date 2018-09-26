@@ -38,4 +38,10 @@
         android:title="Mini Game"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/credits"
+        android:orderInCategory="100"
+        android:title="Credits"
+        app:showAsAction="never" />
+
 </menu>

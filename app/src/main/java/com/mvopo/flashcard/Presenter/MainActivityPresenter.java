@@ -1,5 +1,6 @@
 package com.mvopo.flashcard.Presenter;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 import android.os.Handler;
 import android.speech.RecognitionListener;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
+import android.widget.TextView;
 
 import com.lorentzos.flingswipe.SwipeFlingAdapterView;
 import com.mvopo.flashcard.Interface.MainActivityContract;
@@ -52,24 +54,6 @@ public class MainActivityPresenter implements MainActivityContract.mainAction {
 
         if (mainView.shouldShuffle()) Collections.shuffle(presenterChars);
         return presenterChars;
-    }
-
-    @Override
-    public ArrayList<String> getRandomCharacters(int size) {
-        ArrayList<String> randomChars = new ArrayList<>();
-
-        Random rand = new Random();
-
-        while (randomChars.size() != size) {
-            int randomIndex = rand.nextInt(presenterChars.size());
-
-            String item = presenterChars.get(randomIndex);
-            randomChars.add(item);
-
-            presenterChars.remove(randomIndex);
-        }
-
-        return randomChars;
     }
 
     @Override
@@ -126,9 +110,6 @@ public class MainActivityPresenter implements MainActivityContract.mainAction {
         int baseResourceID = -1;
         int layout = R.layout.letter_num_layout;
 
-        mainView.setSettingVisibility(View.VISIBLE);
-        mainView.setSpeechTextVisibility(View.GONE);
-
         switch (itemID) {
             case R.id.letters_num:
                 regex = Constants.regexPerChar;
@@ -147,18 +128,21 @@ public class MainActivityPresenter implements MainActivityContract.mainAction {
                 break;
             case R.id.mini_game:
                 baseResourceID = R.string.word_8_letters;
-                layout = R.layout.lengthy_words_layout;
 
-                mainView.setSettingVisibility(View.INVISIBLE);
-                mainView.setSpeechTextVisibility(View.VISIBLE);
-                break;
+                presenterChars = getCharacters(regex, baseResourceID);
+                mainView.setCharacters(presenterChars);
+
+                mainView.launchGameActivity();
+                return;
+            case R.id.credits:
+                mainView.showCreditsDialog();
+                return;
         }
 
         presenterChars = getCharacters(regex, baseResourceID);
         presenterChars.add(0, mainView.getTopCard());
 
-        if (itemID == R.id.mini_game) mainView.setCharacters(getRandomCharacters(20));
-        else mainView.setCharacters(presenterChars);
+        mainView.setCharacters(presenterChars);
 
         mainView.initAdapter(layout);
         performFlingTransition();
@@ -242,12 +226,6 @@ public class MainActivityPresenter implements MainActivityContract.mainAction {
                         String buttonAction = button.getText().toString();
 
                         if (buttonAction.equalsIgnoreCase("START")) {
-                            if (menuID == R.id.mini_game) {
-                                view.setVisibility(View.INVISIBLE);
-                                mainView.startSpeechRecognizer();
-                                break;
-                            }
-
                             mainView.startAutoFlash();
 
                             performAuto = true;
@@ -264,67 +242,23 @@ public class MainActivityPresenter implements MainActivityContract.mainAction {
     }
 
     @Override
-    public RecognitionListener getSpeechListener() {
-        RecognitionListener listener = new RecognitionListener() {
+    public View.OnClickListener getCreditLinkListener() {
+        View.OnClickListener listener = new View.OnClickListener() {
             @Override
-            public void onReadyForSpeech(Bundle bundle) {
-                Log.e(TAG, "Ready to listen");
-            }
-
-            @Override
-            public void onBeginningOfSpeech() {
-
-            }
-
-            @Override
-            public void onRmsChanged(float v) {
-
-            }
-
-            @Override
-            public void onBufferReceived(byte[] bytes) {
-
-            }
-
-            @Override
-            public void onEndOfSpeech() {
-
-            }
-
-            @Override
-            public void onError(int i) {
-                Log.e(TAG, "Error received");
-                mainView.restartSpeechRecognizer();
-            }
-
-            @Override
-            public void onResults(Bundle bundle) {
-                ArrayList<String> results = bundle.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
-                String result = results.get(0).toUpperCase();
-
-                mainView.setSpeechText(result);
-
-                if (result.contains(mainView.getTopCard().toUpperCase())) {
-                    mainView.swipeTopCard();
+            public void onClick(View view) {
+                switch (view.getId()){
+                    case R.id.swipe_card_link:
+                        mainView.openLinkIntent("https://github.com/Diolor/Swipecards");
+                        break;
+                    case R.id.icon8_link:
+                        mainView.openLinkIntent("https://icons8.com/");
+                        break;
                 }
-
-                mainView.restartSpeechRecognizer();
-            }
-
-            @Override
-            public void onPartialResults(Bundle bundle) {
-
-            }
-
-            @Override
-            public void onEvent(int i, Bundle bundle) {
-
             }
         };
 
         return listener;
     }
-
 
     @Override
     public void performNext() {
