@@ -1,0 +1,151 @@
+<resources>
+    <string name="app_name">FlashCard</string>
+
+    <string name="letters_num">abcdefghijklmnopqrstuvwxyz123456789</string>
+    <string name="vowels">aeiou</string>
+    <string name="consonants">bcdfghjklmnpqrstvwxyz</string>
+
+    <string name="word_3_letters">
+        Aba Abs Ace Act Add Ado Aft Age Ago Aha Aid Aim Air Ala Ale All Alt
+        Amp Ana And Ant Any Ape App Apt Arc Are Ark Arm Art Ash Ask Asp Ass
+        Ate Ave Awe Axe Aye Bad Bag Ban Bar Bat Bay Bed Bee Beg Bel Ben Bet
+        Bid Big Bin Bio Bis Bit Biz Bob Bog Boo Bow Box Boy Bra Bud Bug Bum
+        Bun Bus But Buy Bye Cab Cad Cam Can Cap Car Cat Chi Cob Cod Col Con
+        Coo Cop Cor Cos Cot Cow Cox Coy Cry Cub Cue Cum Cup Cut Dab Dad Dal
+        Dam Dan Day Dee Def Del Den Dew Did Die Dig Dim Din Dip Dis Doc Doe
+        Dog Don Dot Dry Dub Due Dug Dun Duo Dye Ear Eat Ebb Ecu Eft Egg Ego
+        Elf Elm Emu End Era Eta Eve Eye Fab Fad Fan Far Fat Fax Fay Fed Fee
+        Fen Few Fig Fin Fir Fit Fix Flu Fly Foe Fog For Fox Fry Fun Fur Gag
+        Gal Gap Gas Gay Gee Gel Gem Get Gig Gin God Got Gum Gun Gut Guy Gym
+        Had Ham Has Hat Hay Hem Hen Her Hey Hid Him Hip His Hit Hog Hon Hop
+        Hot How Hub Hue Hug Huh Hum Hut Ice Icy Igg Ill Imp Ink Inn Ion Its
+        Ivy Jam Jar Jaw Jay Jet Jew Job Joe Jog Joy Jug Jun Kay Ken Key Kid
+        Kin Kit Lab Lac Lad Lag Lam Lap Law Lax Lay Lea Led Lee Leg Les Let
+        Lib Lid Lie Lip Lit Log Lot Low Mac Mad Mag Man Map Mar Mas Mat Max
+        May Med Meg Men Met Mid Mil Mix Mob Mod Mol Mom Mon Mop Mot Mud Mug
+        Mum Nab Nah Nan Nap Nay Neb Neg Net New Nil Nip Nod Nor Nos Not Now
+        Nun Nut Oak Odd Off Oft Oil Old Ole One Ooh Opt Orb Ore Our Out Owe
+        Owl Own Pac Pad Pal Pam Pan Pap Par Pas Pat Paw Pay Pea Peg Pen Pep
+        Per Pet Pew Phi Pic Pie Pig Pin Pip Pit Ply Pod Pol Pop Pot Pro Psi
+        Pub Pup Put Rad Rag Raj Ram Ran Rap Rat Raw Ray Red Ref Reg Rem Rep
+        Rev Rib Rid Rig Rim Rip Rob Rod Roe Rot Row Rub Rue Rug Rum Run Rye
+        Sab Sac Sad Sae Sag Sal Sap Sat Saw Say Sea Sec See Sen Set Sew She
+        Shy Sic Sim Sin Sip Sir Sis Sit Six Ski Sky Sly Sod Sol Son Sow Soy
+        Spa Spy Sub Sue Sum Sun Sup Tab Tad Tag Tam Tan Tap Tar Tat Tax Tea
+        Ted Tee Ten The Thy Tie Tin Tip Tod Toe Tom Ton Too Top Tor Tot Tow
+        Toy Try Tub Tug Two Use Van Vat Vet Via Vie Vow Wan War Was Wax Way
+        Web Wed Wee Wet Who Why Wig Win Wis Wit Won Woo Wow Wry Wye Yen Yep
+        Yes Yet You Zip Zoo
+    </string>
+
+    <string name="word_5_letters">
+        About Above Abuse Actor Acute Admit Adopt Adult After Again Agent Agree
+        Ahead Alarm Album Alert Alike Alive Allow Alone Along Alter Among Anger
+        Angle Angry Apart Apple Apply Arena Argue Arise Array Aside Asset Audio
+        Audit Avoid Award Aware Badly Baker Bases Basic Basis Beach Began Begin
+        Begun Being Below Bench Billy Birth Black Blame Blind Block Blood Board
+        Boost Booth Bound Brain Brand Bread Break Breed Brief Bring Broad Broke
+        Brown Build Built Buyer Cable Calif Carry Catch Cause Chain Chair Chart
+        Chase Cheap Check Chest Chief Child China Chose Civil Claim Class Clean
+        Clear Click Clock Close Coach Coast Could Count Court Cover Craft Crash
+        Cream Crime Cross Crowd Crown Curve Cycle Daily Dance Dated Dealt Death
+        Debut Delay Depth Doing Doubt Dozen Draft Drama Drawndream Dress Drill
+        Drink Drive Drove Dying Eager Early Earth Eight Elite Empty Enemy Enjoy
+        Enter Entry Equal Error Event Every Exact Exist Extra Faith False Fault
+        Fiber Field Fifth Fifty Fight Final First Fixed Flash Fleet Floor Fluid
+        Focus Force Forth Forty Forum Found Frame Frank Fraud Fresh Front Fruit
+        Fully Funny Giant Given Glass Globe Going Grace Grade Grand Grant Grass
+        Great Green Gross Group Grown Guard Guess Guest Guide Happy Harry Heart
+        Heavy Hence Henry Horse Hotel House Human Ideal Image Index Inner Input
+        Issue Japan Jimmy Joint Jones Judge Known Label Large Laser Later Laugh
+        Layer Learn Lease Least Leave Legal Level Lewis Light Limit Links Lives
+        Local Logic Loose Lower Lucky Lunch Lying Magic Major Maker March Maria
+        Match Maybe Mayor Meant Media Metal Might Minor Minus Mixed Model Money
+        Month Moral Motor Mount Mouse Mouth Movie Music Needs Never Newly Night
+        Noise North Noted Novel Nurse Occur Ocean Offer Often Order Other Ought
+        Paint Panel Paper Party Peace Peter Phase Phone Photo Piece Pilot Pitch
+        Place Plain Plane Plant Plate Point Pound Power Press Price Pride Prime
+        Print Prior Prize Proof Proud Prove Queen Quick Quiet Quite Radio Raise
+        Range Rapid Ratio Reach Ready Refer Right Rival River Robin Roger Roman
+        Rough Round Route Royal Rural Scale Scene Scope Score Sense Serve Seven
+        Shall Shape Share Sharp Sheet Shelf Shell Shift Shirt Shock Shoot Short
+        Shown Sight Since Sixth Sixty Sized Skill Sleep Slide Small Smart Smile
+        Smith Smoke Solid Solve Sorry Sound South Space Spare Speak Speed Spend
+        Spent Split Spoke Sport Staff Stage Stake Stand Start State Steam Steel
+        Stick Still Stock Stone Stood Store Storm Story Strip Stuck Study Stuff
+        Style Sugar Suite Super Sweet Table Taken Taste Taxes Teach Teeth Terry
+        Texas Thank Theft Their Theme There These Thick Thing Think Third Those
+        Three Threw Throw Tight Times Tired Title Today Topic Total Touch Tough
+        Tower Track Trade Train Treat Trend Trial Tried Tries Truck Truly Trust
+        Truth Twice Under Undue Union Unity Until Upper Upset Urban Usage Usual
+        Valid Value Video Virus Visit Vital Voice Waste Watch Water Wheel Where
+        Which While White Whole Whose Woman Women World Worry Worse Worst Worth
+        Would Wound Write Wrong Wrote Yield Young Youth
+    </string>
+
+    <string name="word_8_letters">
+        Absolute Abstract Academic Accepted Accident Accuracy Accurate Achieved
+        Acquired Activity Actually Addition Adequate Adjacent Adjusted Advanced
+        Advisory Advocate Affected Aircraft Alliance Although Aluminum Analysis
+        Announce Anything Anywhere Apparent Appendix Approach Approval Argument
+        Artistic Assembly Assuming Athletic Attached Attitude Attorney Audience
+        Autonomy Aviation Bachelor Bacteria Baseball Bathroom Becoming Birthday
+        Boundary Breaking Breeding Building Bulletin Business Calendar Campaign
+        Capacity Casualty Catching Category Catholic Cautious Cellular Ceremony
+        Chairman Champion Chemical Children Circular Civilian Clearing Clinical
+        Clothing Collapse Colonial Colorful Commence Commerce Complain Complete
+        Composed Compound Comprise Computer Conclude Concrete Conflict Confused
+        Congress Consider Constant Consumer Continue Contract Contrary Contrast
+        Convince Corridor Coverage Covering Creation Creative Criminal Critical
+        Crossing Cultural Currency Customer Database Daughter Daylight Deadline
+        Deciding Decision Decrease Deferred Definite Delicate Delivery Describe
+        Designer Detailed Diabetes Dialogue Diameter Directly Director Disabled
+        Disaster Disclose Discount Discover Disorder Disposal Distance Distinct
+        District Dividend Division Doctrine Document Domestic Dominant Dominate
+        Doubtful Dramatic Dressing Dropping Duration Dynamics Earnings Economic
+        Educated Efficacy Eighteen Election Electric Eligible Emerging Emphasis
+        Employee Endeavor Engaging Engineer Enormous Entirely Entrance Envelope
+        Equality Equation Estimate Evaluate Eventual Everyday Everyone Evidence
+        Exchange Exciting Exercise Explicit Exposure Extended External Facility
+        Familiar Featured Feedback Festival Finished Firewall Flagship Flexible
+        Floating Football Foothill Forecast Foremost Formerly Fourteen Fraction
+        Franklin Frequent Friendly Frontier Function Generate Generous Genomics
+        Goodwill Governor Graduate Graphics Grateful Guardian Guidance Handling
+        Hardware Heritage Highland Historic Homeless Homepage Hospital Humanity
+        Identify Identity Ideology Imperial Incident Included Increase Indicate
+        Indirect Industry Informal Informed Inherent Initiate Innocent Inspired
+        Instance Integral Intended Interact Interest Interior Internal Interval
+        Intimate Intranet Invasion Involved Isolated Judgment Judicial Junction
+        Keyboard Landlord Language Laughter Learning Leverage Lifetime Lighting
+        Likewise Limiting Literary Location Magazine Magnetic Maintain Majority
+        Marginal Marriage Material Maturity Maximize Meantime Measured Medicine
+        Medieval Memorial Merchant Midnight Military Minimize Minister Ministry
+        Minority Mobility Modeling Moderate Momentum Monetary Moreover Mortgage
+        Mountain Mounting Movement Multiple National Negative Nineteen Northern
+        Notebook Numerous Observer Occasion Offering Official Offshore Operator
+        Opponent Opposite Optimism Optional Ordinary Organize Original Overcome
+        Overhead Overseas Overview Painting Parallel Parental Patented Patience
+        Peaceful Periodic Personal Persuade Petition Physical Pipeline Platform
+        Pleasant Pleasure Politics Portable Portrait Position Positive Possible
+        Powerful Practice Precious Pregnant Presence Preserve Pressing Pressure
+        Previous Princess Printing Priority Probable Probably Producer Profound
+        Progress Property Proposal Prospect Protocol Provided Provider Province
+        Publicly Purchase Pursuant Quantity Question Rational Reaction Received
+        Receiver Recovery Regional Register Relation Relative Relevant Reliable
+        Reliance Religion Remember Renowned Repeated Reporter Republic Required
+        Research Reserved Resident Resigned Resource Response Restrict Revision
+        Rigorous Romantic Sampling Scenario Schedule Scrutiny Seasonal Secondly
+        Security Sensible Sentence Separate Sequence Sergeant Shipping Shortage
+        Shoulder Simplify Situated Slightly Software Solution Somebody Somewhat
+        Southern Speaking Specific Spectrum Sporting Standard Standing Standout
+        Sterling Straight Strategy Strength Striking Struggle Stunning Suburban
+        Suitable Superior Supposed Surgical Surprise Survival Sweeping Swimming
+        Symbolic Sympathy Syndrome Tactical Tailored Takeover Tangible Taxation
+        Taxpayer Teaching Tendency Terminal Terrible Thinking Thirteen Thorough
+        Thousand Together Tomorrow Touching Tracking Training Transfer Traveled
+        Treasury Triangle Tropical Turnover Ultimate Umbrella Universe Unlawful
+        Unlikely Valuable Variable Vertical Victoria Violence Volatile Warranty
+        Weakness Weighted Whatever Whenever Wherever Wildlife Wireless Withdraw
+        Woodland Workshop Yourself
+    </string>
+</resources>
