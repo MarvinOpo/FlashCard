@@ -155,4 +155,11 @@
     <string name="icons8"><u>ICONS8</u></string>
     <string name="icons8_info">An application that generates icons in any color, size and format</string>
 
+    <string name="jk_info">For providing the App Launcher Icon</string>
+
+    <string name="game_instruction">
+        Read and pronounce the word clearly so you can advance to the next word.
+        Or you can simply swipe the card if you dont feel like reading it.
+        \n\n<b>NOTE:</b> Points System and Multiplayer Mode will be available next update. Stay tuned!
+    </string>
 </resources>

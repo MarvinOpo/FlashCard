@@ -1,5 +1,6 @@
 package com.mvopo.flashcard.View;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentManager;
@@ -29,5 +30,12 @@ public class GameActivity extends AppCompatActivity{
         fm = getSupportFragmentManager();
         ft = fm.beginTransaction();
         ft.replace(R.id.fragment_container, pf).commit();
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

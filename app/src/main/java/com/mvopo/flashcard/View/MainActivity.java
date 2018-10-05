@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
         seekBar = findViewById(R.id.speed_seekbar);
         cbAuto = findViewById(R.id.auto_cb);
         cbShuffle = findViewById(R.id.shuffle_cb);
-        tvSpeechText = findViewById(R.id.detexted_text);
+        tvSpeechText = findViewById(R.id.detected_text);
         btnStart = findViewById(R.id.start_btn);
 
         characters.addAll(mPresenter.getCharacters(Constants.regexPerChar, R.string.letters_num));
@@ -130,6 +130,7 @@ public class MainActivity extends AppCompatActivity implements MainActivityContr
         Intent intent = new Intent(this, GameActivity.class);
         intent.putStringArrayListExtra("characters", characters);
         startActivity(intent);
+        finish();
     }
 
 

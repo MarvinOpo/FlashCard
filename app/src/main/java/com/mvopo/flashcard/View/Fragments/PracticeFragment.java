@@ -29,6 +29,7 @@ import com.mvopo.flashcard.Presenter.PracticePresenter;
 import com.mvopo.flashcard.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import static android.support.v4.content.PermissionChecker.checkSelfPermission;
 
@@ -54,13 +55,14 @@ public class PracticeFragment extends Fragment implements PracticeContract.pract
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_practice, container, false);
         characters.addAll(getArguments().getStringArrayList("characters"));
+        Collections.shuffle(characters);
 
         mPresenter = new PracticePresenter(this);
 
         flingContainer = view.findViewById(R.id.fling_view);
 
         btnStart = view.findViewById(R.id.start_btn);
-        tvSpeechText = view.findViewById(R.id.detexted_text);
+        tvSpeechText = view.findViewById(R.id.detected_text);
 
         initAdapter(R.layout.lengthy_words_layout);
         return view;

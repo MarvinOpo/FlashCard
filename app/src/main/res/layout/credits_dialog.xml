@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:background="@color/colorPrimaryDark"
         android:padding="10dp"
-        android:text="Special thanks to:"
+        android:text="Credits to:"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#fff" />
 
@@ -46,5 +46,19 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/icons8_info" />
+
+        <TextView
+            android:id="@+id/jk_link"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="JK"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="#0645AD" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/jk_info" />
     </LinearLayout>
 </LinearLayout>
